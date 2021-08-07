@@ -22,7 +22,7 @@ $animals = AnimalDAO::getAnimauxBD();
 // Le dernier champs idType doit être modifier par la suite car ici ca sera
 // juste le chiffre mais il faut récupérer le nom.
 
-foreach ($animals as $animal) {
+foreach($animals as $animal){
     // Après la création de la fonction permettant de récuperer le libellé du type :
     // new Animal($animal['idAnimal'], $animal['nom'], (int)$animal['age'], (int)$animal['sexe'], $animal['idType'], "");
     // Après la création de la fonction permettant de récuperer le libellé du type de mon animal : 
@@ -51,20 +51,20 @@ foreach ($animals as $animal) {
         </tr>
     </thead>
     <tbody>
-        <?php foreach (Animal::$mesAnimaux as $animal) { ?>
-            <tr>
-                <td style="vertical-align:middle"><?= $animal->getId() ?></td>
-                <td style="vertical-align:middle"><?= $animal->getNom() ?></td>
-                <td style="vertical-align:middle"><?= $animal->getAge() ?></td>
-                <td style="vertical-align:middle"><?= ($animal->getSexe() === 0) ? "Femelle" : "Mâle"; ?></td>
-                <td style="vertical-align:middle"><?= $animal->getType() ?></td>
-                <td style="width:200px" class="text-center">
-                    <?php foreach ($animal->getImages() as $image) : ?>
-                        <img src="sources/<?= $image['url'] ?>" alt="<?= $image['libelle'] ?>" style="max-height:150px;" class="img-thumbnail img-fluid" />
-                    <?php endforeach; ?>
-                </td>
-            </tr>
-        <?php } ?>
+    <?php foreach(Animal::$mesAnimaux as $animal){ ?>
+        <tr>
+            <td style="vertical-align:middle"><?= $animal->getId() ?></td>
+            <td style="vertical-align:middle"><?= $animal->getNom() ?></td>
+            <td style="vertical-align:middle"><?= $animal->getAge() ?></td>
+            <td style="vertical-align:middle"><?= ($animal->getSexe() ===0) ? "Femelle" : "Mâle"; ?></td>
+            <td style="vertical-align:middle"><?= $animal->getType() ?></td>
+            <td style="width:200px" class="text-center">
+                <?php foreach ($animal->getImages() as $image) : ?>
+                    <img src="sources/<?= $image['url'] ?>" alt="<?= $image['libelle'] ?>" style="max-height:150px;" class="img-thumbnail img-fluid"/>
+                <?php endforeach; ?>
+            </td>
+        </tr>
+    <?php }?>
     </tbody>
 </table>
 
