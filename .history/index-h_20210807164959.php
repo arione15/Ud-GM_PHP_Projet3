@@ -25,6 +25,7 @@ new Animal(2,"titi",223,false,"poisson","");
 
 foreach(Animal::$mesAnimaux as $animal){
     echo "Nom : " . $animal->getNom() . "<br>";
+
 }
 
 ?>

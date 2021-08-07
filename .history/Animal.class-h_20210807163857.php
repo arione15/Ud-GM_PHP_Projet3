@@ -16,8 +16,8 @@ class Animal{
         $this->sexe = $sexe;
         $this->type = $type;
         $this->images = $images;
-
-        self::$mesAnimaux[] = $this; // Stocker le nouveau animal qu'on vient de créer
+        
+        self::$mesAnimaux[] = $this;
     }
 
     public function getId(){return $this->id;}

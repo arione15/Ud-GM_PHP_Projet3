@@ -5,9 +5,9 @@ class Animal{
     private $age;
     private $sexe;
     private $type;
-    private $images = []; // On aurait pu faire une classe Image toute seule
+    private $images = [];
 
-    public static $mesAnimaux = []; // Pour y stocker l'ensemble des animaux de la BD
+    public static $mesAnimaux = [];
 
     public function __construct($id,$nom,$age,$sexe,$type,$images){
         $this->id = $id;
@@ -16,8 +16,7 @@ class Animal{
         $this->sexe = $sexe;
         $this->type = $type;
         $this->images = $images;
-
-        self::$mesAnimaux[] = $this; // Stocker le nouveau animal qu'on vient de créer
+        self::$mesAnimaux[] = $this;
     }
 
     public function getId(){return $this->id;}

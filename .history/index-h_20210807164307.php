@@ -21,11 +21,7 @@ require "Animal.class-h.php";
 // echo "</pre>";
 
 new Animal(1,"toto",23,true,"chien","");
-new Animal(2,"titi",223,false,"poisson","");
-
-foreach(Animal::$mesAnimaux as $animal){
-    echo "Nom : " . $animal->getNom() . "<br>";
-}
+new Animal(2,"titi",223,false,"poissonchien","");
 
 ?>
 

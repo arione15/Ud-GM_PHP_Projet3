@@ -20,13 +20,19 @@ require "Animal.class-h.php";
 // print_r($animals);
 // echo "</pre>";
 
-new Animal(1,"toto",23,true,"chien","");
-new Animal(2,"titi",223,false,"poisson","");
+try {
+    $connexion = "mysql:dbname=".self::DB_NAME.";host=".self::HOST_NAME;
+    $options = array(
+    PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8",
+    PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
+);
+    self::$monPDOinstance = new PDO($connexion, self::USER_NAME, self::PWD, $options);
 
-foreach(Animal::$mesAnimaux as $animal){
-    echo "Nom : " . $animal->getNom() . "<br>";
+} catch(PDOException $e){
+$message = "La connexion à la bas de données a échoué".$e->getMessage();
+die();
 }
-
+return self::$monPDOinstance;
 ?>
 
 
